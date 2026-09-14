@@ -1,0 +1,17 @@
+
+class Main {
+    static int reverse=0;
+    public static void rev(int n){
+        if(n==0) return;
+        int digit=n%10; 
+        // last digit nikalta hai
+        reverse=reverse*10+digit;
+        rev(n/10);   
+        // yeah last digit remove krta hy
+    }
+    public static void main(String[] args) {
+    int n=12345;
+    rev(n);
+        System.out.print(reverse);
+    }
+}
