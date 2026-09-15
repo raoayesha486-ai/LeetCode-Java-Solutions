@@ -1,0 +1,19 @@
+import java.util.*;
+
+public class Main {
+  public static int fabonachi(int n){
+    if(n==0){
+      return 0;
+    }
+    if(n==1){
+      return 1;
+    }
+      return fabonachi(n-1)+fabonachi(n-2);
+    }
+  
+    public static void main(String[] args) {
+    int n=5;
+    System.out.print(fabonachi(n));
+
+    }
+}
