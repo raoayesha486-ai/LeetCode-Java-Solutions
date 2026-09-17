@@ -1,0 +1,14 @@
+import java.util.Scanner;
+class Main {
+public static void recursiveprint(int [] arr,int index){
+int n=arr.length;
+if(index==n) return;
+    System.out.print(arr[index]+" ");
+    recursiveprint(arr,index+1);
+}
+    
+    public static void main(String[] args) {
+   int arr[] ={5,3,7,12,76,9,34,5};
+     recursiveprint(arr,0);
+    }
+}
