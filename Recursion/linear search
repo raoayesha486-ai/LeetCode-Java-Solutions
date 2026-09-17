@@ -1,0 +1,15 @@
+import java.util.Scanner;
+class Main {
+public static boolean exist(int[ ]arr,int element,int index){
+    if(index==element) return false;
+     if(arr[index]==element)  return true;
+    return exist(arr,element,index+1);
+}
+    
+    public static void main(String[] args) {
+   int arr[] ={5,3,7,12,76,9,34,5};
+    int n=arr.length;
+   int element=7;
+   System.out.print(exist(arr,element,0));
+    }
+}
