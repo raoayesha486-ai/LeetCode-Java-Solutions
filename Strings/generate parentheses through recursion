@@ -1,0 +1,16 @@
+import java.util.*;
+
+public class Main {
+  public static void generate(int n,int left,int right,String s){
+    if(n==right){
+      System.out.print(s+" ");
+      return;
+    }
+    if(left<n) generate(n,left+1,right,s+"(");
+     if(right<left) generate(n,left,right+1,s+")");
+  }
+    public static void main(String[] args) {
+    int n=3;
+    generate(n,0,0,"");
+    }
+}
