@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class Main {
+  public static void subset(String answer,String s,int index){
+    if(index==s.length()){
+      System.out.print(answer+" ");
+      return;
+    }
+    char ch=s.charAt(index);
+    subset(answer+ch,s,index+1);      
+    subset(answer,s,index+1);
+  }
+    public static void main(String[] args) {
+    String s="abc";
+    subset("",s,0);
+    }
+}
