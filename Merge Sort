@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      int [] arr={5,2,8,4,1,6,7,8};
+      mergesort(arr);
+      for(int ele:arr) System.out.print(ele +" ");
+    }
+    public static void mergesort(int[]arr){
+    int n=arr.length;
+    if(n==1) return;
+    // creat 2 new empty arrays of size n/2
+    int [] a=new int [n/2];
+    int [] b=new int [n-n/2];
+    // copy paste arr in to a and b
+    int index=0;
+    // populate
+     for(int i=0;i<a.length;i++){
+      a[i]=arr[index++];
+    }
+    for(int i=0;i<b.length;i++){
+      b[i]=arr[index++];
+    }
+    // Apply magic on a and b
+    mergesort(a);
+    mergesort(b);
+    merge(a,b,arr);
+    // merge a and b in to arr
+    }
+  public static void merge(int[]a,int [] b,int [] c){
+    int i=0,j=0,k=0;
+    while(i<a.length && j<b.length){
+    if(a[i]<=b[j]) c[k++]=a[i++];
+    else c[k++]=b[j++];
+    }
+    while(i<a.length) c[k++]=a[i++];
+    while(j<b.length) c[k++]=b[j++];
+  }
+}
